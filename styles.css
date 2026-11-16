@@ -211,10 +211,11 @@ body { background: var(--bg); color: var(--ink); }
 /* Expanded-image side panel */
 .viewer {
   position: absolute;
+  z-index: 2;
   left: 0;
   top: calc(300 * var(--u));
   bottom: 0;
-  width: calc(860 * var(--u));
+  width: min(45vw, calc(860 * var(--u)));
   background: #fff;
   border-right: 1px solid #dadce0;
   box-shadow: 0 0 calc(24 * var(--u)) rgba(0,0,0,.12);
