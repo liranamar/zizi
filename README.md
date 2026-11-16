@@ -1,4 +1,4 @@
-# Zizi – Queering the Dataset
+# Zizi - Queering the Dataset
 
 הבינה המלאכותית מאפשרת לנו ללמוד על העבר ולחוות אותו בצורה מוחשית אך מן הצד השני היא עלולה לשבש אותו.
 
