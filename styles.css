@@ -1,0 +1,123 @@
+/* Design is 1920px wide; --u is one design pixel, scaled to the viewport. */
+:root {
+  --bg: #24043a;
+  --ink: #ffeedc;
+  --u: calc(min(100vw, 1920px) / 1920);
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.page {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-bottom: calc(71 * var(--u));
+}
+
+/* ---------- Top section ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: calc(1104 * var(--u)) 1fr;
+}
+
+/* Replaces the yellow rectangle (1104 x 1080). The video is 1:1. */
+.hero__video {
+  height: calc(1080 * var(--u));
+  display: grid;
+  place-items: center;
+}
+
+.hero__video iframe {
+  display: block;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 100%;
+  border: 0;
+  pointer-events: none; /* behaves like a background video: no click-to-pause */
+}
+
+.hero__info {
+  display: flex;
+  flex-direction: column;
+  padding: calc(100 * var(--u)) calc(88 * var(--u)) 0 calc(44 * var(--u));
+}
+
+.hero__artist {
+  align-self: flex-end;
+  width: calc(242 * var(--u));
+  height: calc(243 * var(--u));
+  margin-right: calc(12 * var(--u));
+  object-fit: cover;
+}
+
+.hero__title {
+  margin: calc(171 * var(--u)) 0 0;
+  font-weight: 400;
+  line-height: 1.254;
+  white-space: nowrap;
+}
+
+.hero__title-main,
+.hero__title-sub {
+  display: block;
+  font-family: "Zen Old Mincho", serif;
+}
+
+.hero__title-main {
+  font-weight: 900;
+  font-size: calc(100 * var(--u));
+}
+
+.hero__title-sub {
+  font-size: calc(60 * var(--u));
+}
+
+.hero__text {
+  align-self: flex-end;
+  width: calc(680 * var(--u));
+  margin-top: calc(22 * var(--u));
+  font-family: "Miriam Libre", sans-serif;
+  font-size: max(calc(16 * var(--u)), 11px);
+  line-height: normal;
+  text-align: right;
+}
+
+.hero__text p { margin: 0 0 1.2em; }
+.hero__text p:last-child { margin-bottom: 0; }
+
+/* ---------- Gallery ---------- */
+.gallery {
+  display: block;
+  width: calc(1672 * var(--u));
+  height: auto;
+  margin: calc(68 * var(--u)) 0 0 calc(98 * var(--u));
+}
+
+/* ---------- Narrow screens: stack ---------- */
+@media (max-width: 900px) {
+  :root { --u: calc(100vw / 900); }
+
+  .hero { grid-template-columns: minmax(0, 1fr); }
+
+  .hero__video { height: auto; }
+  .hero__video iframe { width: 100%; height: auto; }
+
+  .hero__info { padding: 32px 16px 0; }
+
+  .hero__artist { width: 140px; height: 141px; margin-right: 0; }
+
+  .hero__title { margin-top: 24px; white-space: normal; }
+  .hero__title-main { font-size: 56px; }
+  .hero__title-sub { font-size: 32px; }
+
+  .hero__text { width: 100%; margin-top: 16px; font-size: 16px; }
+
+  .gallery { width: calc(100% - 32px); margin: 40px 16px 0; }
+  .page { padding-bottom: 40px; }
+}
