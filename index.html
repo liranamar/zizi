@@ -6,12 +6,13 @@
   <title>Zizi – Queering the Dataset</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Miriam+Libre&family=Zen+Old+Mincho:wght@400;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;800&family=Zen+Old+Mincho:wght@400;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="page">
-    <section class="hero">
+  <!-- ---------- Frame 1: intro ---------- -->
+  <section class="frame frame--hero">
+    <div class="stage hero">
       <div class="hero__video">
         <iframe
           src="https://player.vimeo.com/video/388245510?background=1&autoplay=1&muted=1&loop=1&controls=0&dnt=1"
@@ -21,23 +22,84 @@
           allowfullscreen></iframe>
       </div>
 
-      <div class="hero__info">
-        <img class="hero__artist" src="assets/artist.png" alt="Jake Elwes" width="720" height="724">
+      <img class="hero__artist" src="assets/artist.png" alt="Jake Elwes" width="720" height="724">
 
-        <h1 class="hero__title" dir="ltr">
-          <span class="hero__title-main">Zizi</span>
-          <span class="hero__title-sub">Queering the Dataset</span>
-        </h1>
+      <h1 class="hero__title" dir="ltr">
+        <span class="hero__title-main">Zizi</span>
+        <span class="hero__title-sub">Queering the Dataset</span>
+      </h1>
 
-        <div class="hero__text" dir="rtl">
-          <p>האמן Jake Elwes מאמן מודל בינה מלאכותית על מאגר FFHQ, המכיל כ-70,000 תמונות פנים. המאגר אינו מייצג באופן מספק את המגוון המגדרי והחזותי של מופעי דראג וזהויות קוויריות. כדי לערער על ההטיות הללו הוא מוסיף כ-1,000 תמונות של אמני ואמניות דראג ומאמן מחדש את המודל.</p>
-          <p>המרחב הלטנטי חושף כיצד הבינה המלאכותית לומדת ומארגנת ייצוגים של פנים, מגדר וזהות בהתאם למידע שעליו אומנה. הדימויים המשתנים והמעוותים בעבודה מדגישים את חוסר היציבות של הקטגוריות המגדריות ואת האפשרות לחרוג מהן. במקביל, המרחב הלטנטי מעלים את המורכבות של זהות אנושית, כשהוא מצמצם אותה למאפיינים חזותיים ולדפוסים סטטיסטיים, ללא ההקשרים האישיים, החברתיים והתרבותיים שמאחוריהם.</p>
-          <p>האסטרטגיה המרכזית בעבודה היא גליץ' (Glitch). העיוותים והמעברים הלא־טבעיים בין הפנים אינם רק תקלות טכנולוגיות, אלא אמצעי אמנותי שחושף את מגבלות המודל ואת ההטיות המוטמעות בו. באמצעות הגליץ', אלווס מערער על הניסיון של הבינה המלאכותית לייצר ייצוגים אחידים ויציבים של זהות ומגדר, והופך את מה שנתפס ככשל של המערכת לאפשרות של ביטוי והתנגדות.</p>
-        </div>
+      <div class="hero__text" dir="rtl">
+        <p>סומאיני טוען כי <strong>המרחב הלטנטי אינו מרחב מתמטי ניטרלי, אלא מרחב שמושפע מהארכיון שעליו אומן המודל.</strong></p>
+        <p>האמן Jake Elwes מאמן מודל בינה מלאכותית על מאגר FFHQ, המכיל כ-70,000 תמונות פנים.<br>
+        המאגר אינו מייצג באופן מספק את המגוון המגדרי והחזותי של מופעי דראג וזהויות קוויריות. כדי לערער על ההטיות הללו הוא מוסיף כ-1,000 תמונות של אמני ואמניות דראג ומאמן מחדש את המודל.<br>
+        כאשר אלווס משנה את נתוני האימון, הוא משנה גם את האפשרויות החזותיות שהמודל מסוגל לייצר. כלומר, מה שחסר בארכיון משפיע על מה שיכול להופיע במרחב הלטנטי.</p>
+        <p>המרחב הלטנטי חושף כיצד הבינה המלאכותית לומדת ומארגנת ייצוגים של פנים, מגדר וזהות בהתאם למידע שעליו אומנה. הדימויים המשתנים והמעוותים בעבודה מדגישים את חוסר היציבות של הקטגוריות המגדריות ואת האפשרות לחרוג מהן. במקביל, המרחב הלטנטי מעלים את המורכבות של זהות אנושית, כשהוא מצמצם אותה למאפיינים חזותיים ולדפוסים סטטיסטיים, ללא ההקשרים האישיים, החברתיים והתרבותיים שמאחוריהם.</p>
+        <p>האסטרטגיה המרכזית בעבודה היא גליץ' (Glitch). העיוותים והמעברים הלא־טבעיים בין הפנים אינם רק תקלות טכנולוגיות, אלא אמצעי אמנותי שחושף את מגבלות המודל ואת ההטיות המוטמעות בו. באמצעות הגליץ', אלווס מערער על הניסיון של הבינה המלאכותית לייצר ייצוגים אחידים ויציבים של זהות ומגדר, והופך את מה שנתפס ככשל של המערכת לאפשרות של ביטוי והתנגדות.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <img class="gallery" src="assets/gallery.png" alt="גלריה בורדו של דיוקנאות רנסנס" width="1672" height="941">
-  </main>
+  <!-- ---------- Frames 2 + 3: the search, then its results (same "browser window") ---------- -->
+  <section class="frame frame--browser" id="browser">
+    <!-- Frame 2: empty search box, blinking caret, typed query -->
+    <div class="stage shot shot--search is-active" id="search">
+      <img class="shot__bg shot__bg--search" src="assets/search-bg.png" alt="" width="3704" height="2062">
+      <div class="search__box" aria-hidden="true">
+        <span class="search__text" dir="ltr"><span id="typed"></span><span class="search__caret"></span></span>
+      </div>
+    </div>
+
+    <!-- Frame 3: image results with clickable, expandable images -->
+    <div class="stage shot shot--results" id="results">
+      <img class="shot__bg shot__bg--results" src="assets/results-bg.jpg" alt="" width="3712" height="2068">
+
+      <button class="thumb" style="--x:1661; --y:312; --w:227; --h:282"
+        data-title="Lucia Casalini Torelli, Portrait of the Italian Noble Family" data-source="Pamono">
+        <img src="assets/r1.jpg" alt="">
+      </button>
+      <button class="thumb" style="--x:1183; --y:312; --w:232; --h:282; --iw:110.89%; --ih:99.82%; --il:-7.14%; --it:0.18%"
+        data-title="Portrait of Eleanor of Toledo - Wikipedia" data-source="Wikipedia">
+        <img src="assets/r2.jpg" alt="">
+      </button>
+      <button class="thumb" style="--x:471; --y:312; --w:230; --h:301; --iw:106.89%; --ih:102.06%; --il:-6.89%; --it:-0.07%"
+        data-title="Portrait Noble Woman Italian School Painting" data-source="1stDibs">
+        <img src="assets/r3.jpg" alt="">
+      </button>
+      <button class="thumb" style="--x:-2; --y:312; --w:227; --h:301"
+        data-title="Italian School, 16th Century portrait of a noble" data-source="Selling Antiques">
+        <img src="assets/r4.jpg" alt="">
+      </button>
+      <button class="thumb" style="--x:1661; --y:854; --w:228; --h:305"
+        data-title="A Renaissance oil painting from Florence" data-source="Wikipedia">
+        <img src="assets/r5.jpg" alt="">
+      </button>
+      <button class="thumb" style="--x:946; --y:568; --w:228; --h:354; --iw:125.11%; --ih:107.44%; --il:-12.72%; --it:0"
+        data-title="Lucia Casalini Torelli, Portrait of the Italian Noble" data-source="Pamono">
+        <img src="assets/r6.jpg" alt="">
+      </button>
+
+      <!-- Expanded image panel (opens on the left, as in Hebrew Google) -->
+      <aside class="viewer" id="viewer" aria-hidden="true">
+        <div class="viewer__bar">
+          <button class="viewer__icon viewer__close" id="viewer-close" aria-label="סגירה">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          </button>
+          <button class="viewer__icon" aria-label="שיתוף">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+          </button>
+          <div class="viewer__source"><span class="viewer__favicon" id="viewer-fav"></span><span id="viewer-source"></span></div>
+        </div>
+        <div class="viewer__media"><img id="viewer-img" src="" alt=""></div>
+        <div class="viewer__meta">
+          <p class="viewer__title" id="viewer-title" dir="ltr"></p>
+          <a class="viewer__visit" href="#" onclick="return false">ביקור</a>
+          <p class="viewer__note">התמונות עשויות להיות מוגנות בזכויות יוצרים.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
