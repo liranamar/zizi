@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;800&family=Zen+Old+Mincho:wght@400;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
   <!-- ---------- Frame 1: intro ---------- -->
@@ -41,66 +41,46 @@
   </section>
 
   <!-- ---------- Frames 2 + 3: the search, then its results (same "browser window") ---------- -->
-  <section class="frame frame--browser" id="browser">
-    <!-- Frame 2: empty search box, blinking caret, typed query -->
-    <div class="stage shot shot--search is-active" id="search">
-      <img class="shot__bg shot__bg--search" src="assets/search-bg.png" alt="" width="3704" height="2062">
-      <div class="search__box" aria-hidden="true">
-        <span class="search__text" dir="ltr"><span id="typed"></span><span class="search__caret"></span></span>
+  <section class="browser" id="browser">
+    <!-- Frame 2: empty search box, blinking caret, typed query (fills the screen) -->
+    <div class="search" id="search">
+      <div class="stage">
+        <img class="search__bg" src="assets/search-bg.png" alt="" width="3704" height="2062">
+        <div class="search__box" aria-hidden="true">
+          <span class="search__text" dir="ltr"><span id="typed"></span><span class="search__caret"></span></span>
+        </div>
       </div>
     </div>
 
-    <!-- Frame 3: image results with clickable, expandable images -->
-    <div class="stage shot shot--results" id="results">
-      <img class="shot__bg shot__bg--results" src="assets/results-bg.jpg" alt="" width="3712" height="2068">
-
-      <button class="thumb" style="--x:1661; --y:312; --w:227; --h:282"
-        data-title="Lucia Casalini Torelli, Portrait of the Italian Noble Family" data-source="Pamono">
-        <img src="assets/r1.jpg" alt="">
-      </button>
-      <button class="thumb" style="--x:1183; --y:312; --w:232; --h:282; --iw:110.89%; --ih:99.82%; --il:-7.14%; --it:0.18%"
-        data-title="Portrait of Eleanor of Toledo - Wikipedia" data-source="Wikipedia">
-        <img src="assets/r2.jpg" alt="">
-      </button>
-      <button class="thumb" style="--x:471; --y:312; --w:230; --h:301; --iw:106.89%; --ih:102.06%; --il:-6.89%; --it:-0.07%"
-        data-title="Portrait Noble Woman Italian School Painting" data-source="1stDibs">
-        <img src="assets/r3.jpg" alt="">
-      </button>
-      <button class="thumb" style="--x:-2; --y:312; --w:227; --h:301"
-        data-title="Italian School, 16th Century portrait of a noble" data-source="Selling Antiques">
-        <img src="assets/r4.jpg" alt="">
-      </button>
-      <button class="thumb" style="--x:1661; --y:854; --w:228; --h:305"
-        data-title="A Renaissance oil painting from Florence" data-source="Wikipedia">
-        <img src="assets/r5.jpg" alt="">
-      </button>
-      <button class="thumb" style="--x:946; --y:568; --w:228; --h:354; --iw:125.11%; --ih:107.44%; --il:-12.72%; --it:0"
-        data-title="Lucia Casalini Torelli, Portrait of the Italian Noble" data-source="Pamono">
-        <img src="assets/r6.jpg" alt="">
-      </button>
+    <!-- Frame 3: a real, scrolling image-results page -->
+    <div class="results" id="results" hidden>
+      <header class="results__head">
+        <img src="assets/results-bg.jpg" alt="" width="3712" height="2068">
+      </header>
+      <div class="results__grid" id="grid" dir="ltr"></div>
     </div>
 
-    <!-- Expanded image panel (opens on the left, as in Hebrew Google).
-         Lives outside the scaled screenshot so it always fits the screen. -->
-      <aside class="viewer" id="viewer" aria-hidden="true">
-        <div class="viewer__bar">
-          <button class="viewer__icon viewer__close" id="viewer-close" aria-label="סגירה">
-            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-          </button>
-          <button class="viewer__icon" aria-label="שיתוף">
-            <svg viewBox="0 0 24 24" width="22" height="22"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
-          </button>
-          <div class="viewer__source"><span class="viewer__favicon" id="viewer-fav"></span><span id="viewer-source"></span></div>
-        </div>
-        <div class="viewer__media"><img id="viewer-img" src="" alt=""></div>
-        <div class="viewer__meta">
-          <p class="viewer__title" id="viewer-title" dir="ltr"></p>
-          <a class="viewer__visit" href="#" onclick="return false">ביקור</a>
-          <p class="viewer__note">התמונות עשויות להיות מוגנות בזכויות יוצרים.</p>
-        </div>
-      </aside>
+    <!-- Expanded image panel (opens on the left, as in Hebrew Google) -->
+    <aside class="viewer" id="viewer" aria-hidden="true">
+      <div class="viewer__bar">
+        <button class="viewer__icon viewer__close" id="viewer-close" aria-label="סגירה">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+        <button class="viewer__icon" aria-label="שיתוף">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+        </button>
+        <div class="viewer__source"><span class="viewer__favicon" id="viewer-fav"></span><span id="viewer-source"></span></div>
+      </div>
+      <div class="viewer__media"><img id="viewer-img" src="" alt=""></div>
+      <div class="viewer__meta">
+        <p class="viewer__title" id="viewer-title" dir="ltr"></p>
+        <a class="viewer__visit" href="#" onclick="return false">ביקור</a>
+        <p class="viewer__note">התמונות עשויות להיות מוגנות בזכויות יוצרים.</p>
+      </div>
+    </aside>
   </section>
 
-  <script src="script.js?v=3"></script>
+  <script src="grid-data.js?v=4"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
